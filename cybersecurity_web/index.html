@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Cybersecurity Awareness</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔐 Cybersecurity Awareness</h1>
+  <nav>
+    <button onclick="showPage('home')">เนื้อหา</button>
+    <button onclick="showPage('scenario')">สถานการณ์</button>
+    <button onclick="showPage('quiz')">แบบทดสอบ</button>
+  </nav>
+</header>
+
+<section id="home" class="page active fade">
+
+  <h2>📘 ความรู้พื้นฐานด้าน Cybersecurity</h2>
+
+  <div class="card">
+    <h3>🔐 Cybersecurity คืออะไร?</h3>
+    <p>
+      Cybersecurity คือ การป้องกันระบบคอมพิวเตอร์ เครือข่าย และข้อมูลจากการถูกโจมตีหรือเข้าถึงโดยไม่ได้รับอนุญาต 
+      โดยมีเป้าหมายเพื่อรักษา:
+    </p>
+    <ul>
+      <li><b>Confidentiality</b> — ความลับของข้อมูล</li>
+      <li><b>Integrity</b> — ความถูกต้องของข้อมูล</li>
+      <li><b>Availability</b> — ความพร้อมใช้งาน</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🎣 Phishing (การหลอกลวง)</h3>
+    <p>
+      Phishing คือการหลอกให้ผู้ใช้กรอกข้อมูลสำคัญ เช่น รหัสผ่าน หรือข้อมูลบัตรเครดิต 
+      โดยมักมาในรูปแบบ:
+    </p>
+    <ul>
+      <li>อีเมลปลอม</li>
+      <li>เว็บไซต์ปลอม</li>
+      <li>ลิงก์แปลกจากแชท</li>
+    </ul>
+    <p><b>วิธีป้องกัน:</b> อย่าคลิกลิงก์ที่ไม่น่าเชื่อถือ และตรวจสอบ URL ทุกครั้ง</p>
+  </div>
+
+  <div class="card">
+    <h3>🦠 Malware (มัลแวร์)</h3>
+    <p>
+      Malware คือโปรแกรมอันตรายที่ถูกสร้างขึ้นเพื่อทำลายหรือขโมยข้อมูล เช่น:
+    </p>
+    <ul>
+      <li>Virus — ทำลายไฟล์</li>
+      <li>Trojan — แฝงตัวในโปรแกรม</li>
+      <li>Spyware — ดักข้อมูล</li>
+    </ul>
+    <p><b>วิธีป้องกัน:</b> ไม่ดาวน์โหลดไฟล์จากแหล่งที่ไม่ปลอดภัย</p>
+  </div>
+
+  <div class="card">
+    <h3>🔑 การตั้งรหัสผ่านที่ปลอดภัย</h3>
+    <p>รหัสผ่านที่ดีควรมีลักษณะดังนี้:</p>
+    <ul>
+      <li>มีความยาวอย่างน้อย 8–12 ตัวอักษร</li>
+      <li>มีตัวพิมพ์ใหญ่ + พิมพ์เล็ก</li>
+      <li>มีตัวเลขและสัญลักษณ์</li>
+      <li>ไม่ใช้ข้อมูลส่วนตัว เช่น วันเกิด</li>
+    </ul>
+    <p><b>ตัวอย่าง:</b> T3@k#9Lm!</p>
+  </div>
+
+  <div class="card">
+    <h3>📱 Social Engineering</h3>
+    <p>
+      เป็นการหลอกลวงโดยใช้จิตวิทยา เช่น แอบอ้างเป็นเจ้าหน้าที่ หรือเพื่อน
+      เพื่อให้เหยื่อเปิดเผยข้อมูล
+    </p>
+    <p><b>ตัวอย่าง:</b> มีคนโทรมาขอ OTP โดยอ้างว่าเป็นธนาคาร</p>
+  </div>
+
+  <div class="card">
+    <h3>🌐 การใช้งานอินเทอร์เน็ตอย่างปลอดภัย</h3>
+    <ul>
+      <li>หลีกเลี่ยง Wi-Fi สาธารณะ</li>
+      <li>ตรวจสอบเว็บไซต์ (https)</li>
+      <li>อัปเดตระบบและแอปสม่ำเสมอ</li>
+      <li>ไม่แชร์ข้อมูลส่วนตัวในที่สาธารณะ</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>⚠️ สิ่งที่ไม่ควรทำ</h3>
+    <ul>
+      <li>ใช้รหัสผ่านเดียวทุกบัญชี</li>
+      <li>กดลิงก์แปลกทันที</li>
+      <li>ให้ OTP กับคนอื่น</li>
+      <li>ดาวน์โหลดไฟล์จากเว็บไม่น่าเชื่อถือ</li>
+    </ul>
+  </div>
+
+</section>
+
+<section id="scenario" class="page fade">
+  <h2>🧠 สถานการณ์จำลอง</h2>
+
+  <div id="scenarioContainer"></div>
+
+  <h3 id="scenarioResult"></h3>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="page fade">
+  <h2>📝 แบบทดสอบ 20 ข้อ</h2>
+  <div id="quizContainer"></div>
+  <button onclick="submitQuiz()">ส่งคำตอบ</button>
+  <h3 id="score"></h3>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
