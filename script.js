@@ -61,7 +61,6 @@ function submitQuiz(){
   document.getElementById("score").innerHTML =
     "คะแนนของคุณ: " + score + "/20";
 }
-// ===== SCENARIO DATA =====
 document.addEventListener("DOMContentLoaded", function () {
 
   const scenarioData = [
@@ -83,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const container = document.getElementById("scenarioContainer");
-  const result = document.getElementById("scenarioResult");
 
   scenarioData.forEach((s, i) => {
     let div = document.createElement("div");
@@ -97,20 +95,29 @@ document.addEventListener("DOMContentLoaded", function () {
               </button>`;
     });
 
+    // ✅ เพิ่ม result ของแต่ละข้อ
+    html += `<p class="result" id="result-${i}"></p>`;
+
     div.innerHTML = html;
     container.appendChild(div);
   });
 
-  // ✅ ใช้ event listener แทน onclick
   document.querySelectorAll(".scenario-btn").forEach(btn => {
     btn.addEventListener("click", function () {
       const q = this.dataset.q;
       const choice = this.dataset.choice;
 
+      let resultBox = document.getElementById(`result-${q}`);
+
       if (choice == scenarioData[q].correct) {
-        result.innerHTML = "✅ ถูกต้อง!";
+        resultBox.innerHTML = "✅ ถูกต้อง!";
       } else {
-        result.innerHTML = "❌ ไม่ถูกต้อง!";
+        resultBox.innerHTML = "❌ ไม่ถูกต้อง!";
+      }
+    });
+  });
+
+});
       }
     });
   });
